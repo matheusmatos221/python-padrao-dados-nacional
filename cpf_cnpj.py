@@ -40,34 +40,9 @@ class CpfCnpj:
             raise ValueError("Quantidade de dígitos inválida!")
 
     def format_cpf(self):
-        fatia_um = self.cpf[:3]
-        fatia_dois = self.cpf[3:6]
-        fatia_tres = self.cpf[6:9]
-        fatia_quatro = self.cpf[9:]
-
-        return (
-            "{}.{}.{}-{}".format(
-            fatia_um,
-            fatia_dois,
-            fatia_tres,
-            fatia_quatro
-            )
-        )
+        mascara = CPF()
+        return mascara.mask(self.cpf)
 
     def format_cnpj(self):
-        """  Example: INPUT -> 43918354000122 | OUTPUT -> 43.918.354/0001-22  """
-        fatia_um = self.cnpj[:2]
-        fatia_dois = self.cnpj[2:5]
-        fatia_tres = self.cnpj[5:8]
-        fatia_quatro = self.cnpj[8:12]
-        fatia_cinco = self.cnpj[12:]
-
-        return (
-            "{}.{}.{}/{}-{}".format(
-            fatia_um,
-            fatia_dois,
-            fatia_tres,
-            fatia_quatro,
-            fatia_cinco
-            )
-        )
+        mascara = CNPJ()
+        return mascara.mask(self.cnpj)
