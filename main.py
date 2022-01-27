@@ -1,4 +1,4 @@
-from cpf_cnpj import CpfCnpj
+from cpf_cnpj import Documento
 
 # cpf_um = Cpf("23028441810")
 # print(cpf_um)
@@ -9,7 +9,5 @@ exemplo_cnpj = 43918354000122
 # print(cnpj.validate(str(exemplo_cnpj)))
 
 
-documento = CpfCnpj(exemplo_cnpj, 'cnpj')
-documento2 = CpfCnpj(exemplo_cpf, 'cpf')
+documento = Documento.cria_documento(str(exemplo_cpf))
 print(documento)
-print(documento2)
