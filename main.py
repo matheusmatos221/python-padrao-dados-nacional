@@ -1,5 +1,5 @@
-from datetime import datetime, timedelta
-from datas_br import DatasBr
+from acesso_cep import BuscaEndereco
 
-hoje = DatasBr()
-print(hoje.tempo_cadastro())
+cep = 13186235
+obj_cep = BuscaEndereco(cep)
+print(obj_cep)
